@@ -1,0 +1,82 @@
+[
+  {
+    "rule_id": "RULE-BAT-CRIT",
+    "condition": "battery_soc < 0.20",
+    "activity_type": "charging",
+    "recommended_priority": 10,
+    "severity": "critical",
+    "reason": "Battery charge below 20% critical threshold — recharge takes absolute precedence"
+  },
+  {
+    "rule_id": "RULE-BAT-LOW",
+    "condition": "battery_soc < 0.40",
+    "activity_type": "charging",
+    "recommended_priority": 8,
+    "severity": "high",
+    "reason": "Battery charge below 40% operating threshold — prioritize solar panel sun-pointing"
+  },
+  {
+    "rule_id": "RULE-BAT-HIGH",
+    "condition": "battery_soc >= 0.85",
+    "activity_type": "charging",
+    "recommended_priority": 3,
+    "severity": "low",
+    "reason": "Battery charge above 85% nominal headroom — charging not urgent"
+  },
+  {
+    "rule_id": "RULE-STOR-CRIT",
+    "condition": "storage_pct > 0.90",
+    "activity_type": "downlink",
+    "recommended_priority": 10,
+    "severity": "critical",
+    "reason": "On-board flash storage above 90% — downlink urgently required to prevent buffer overflow"
+  },
+  {
+    "rule_id": "RULE-STOR-HIGH",
+    "condition": "storage_pct > 0.70",
+    "activity_type": "downlink",
+    "recommended_priority": 8,
+    "severity": "high",
+    "reason": "On-board flash storage above 70% — schedule ground station transmission pass"
+  },
+  {
+    "rule_id": "RULE-CONT-CLOSE",
+    "condition": "ticks_until_contact_loss < 300",
+    "activity_type": "downlink",
+    "recommended_priority": 9,
+    "severity": "high",
+    "reason": "Ground station contact window closing soon (<300s remaining) — downlink immediately"
+  },
+  {
+    "rule_id": "RULE-SCI-DEFER",
+    "condition": "battery_soc < 0.25",
+    "activity_type": "observation",
+    "recommended_priority": 3,
+    "severity": "high",
+    "reason": "Battery charge critical (<25%) — defer high-power science payload operations"
+  },
+  {
+    "rule_id": "RULE-ANOM-SUB",
+    "condition": "critical_anomaly_in_subsystem",
+    "activity_type": "any",
+    "recommended_priority": 2,
+    "severity": "critical",
+    "reason": "Active critical anomaly detected in subsystem — defer activity until safe-hold cleared"
+  },
+  {
+    "rule_id": "RULE-ECL-SHORT",
+    "condition": "ticks_until_eclipse < 120",
+    "activity_type": "charging",
+    "recommended_priority": 4,
+    "severity": "medium",
+    "reason": "Sunlight window about to be truncated by upcoming eclipse entry (<120s)"
+  },
+  {
+    "rule_id": "RULE-STOR-EMPTY",
+    "condition": "storage_pct < 0.15",
+    "activity_type": "downlink",
+    "recommended_priority": 3,
+    "severity": "low",
+    "reason": "On-board storage nearly empty (<15%) — minimal science data to transmit"
+  }
+]
