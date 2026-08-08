@@ -1,0 +1,41 @@
+{
+  "mission_name": "Aegis MOS CubeSat Reference Mission",
+  "spacecraft_id": "AEGIS-CS1",
+  "mission_duration_hours": 24,
+  "mission_duration_seconds": 86400,
+  "orbit": {
+    "altitude_km": 500,
+    "inclination_deg": 97.4,
+    "period_seconds": 5400,
+    "total_orbits_in_24h": 16,
+    "eclipse_fraction": 0.35,
+    "sunlit_seconds_per_orbit": 3510,
+    "eclipse_seconds_per_orbit": 1890,
+    "contact_window_seconds_per_orbit": 600,
+    "contact_start_offset_seconds": 1200
+  },
+  "power_subsystem": {
+    "battery_capacity_wh": 40.0,
+    "bus_voltage_nominal": 5.0,
+    "solar_panel_max_w": 7.0,
+    "solar_efficiency": 0.28,
+    "baseline_power_draw_w": 2.0,
+    "downlink_power_draw_w": 3.5,
+    "slew_power_draw_w": 1.0,
+    "observation_power_draw_w": 1.5,
+    "heater_power_w": 1.5
+  },
+  "thermal_subsystem": {
+    "thermal_mass_factor": 0.08,
+    "heat_dissipation_coeff": 0.015,
+    "space_temp_c": -270.0,
+    "heater_on_threshold_c": 5.0,
+    "heater_off_threshold_c": 10.0,
+    "nominal_temp_range_c": [-20.0, 45.0]
+  },
+  "cdh_storage": {
+    "storage_capacity_mb": 2048.0,
+    "observation_data_rate_mb_per_s": 5.0,
+    "downlink_data_rate_mb_per_s": 8.0
+  }
+}
